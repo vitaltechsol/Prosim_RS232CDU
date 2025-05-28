@@ -27,7 +27,7 @@ namespace Prosim_RS232CDU
             ConnectToProSim(prosimIP);
             Invoke(new MethodInvoker(StartCOMPort));
 
-            DataRef dataRef1 = new DataRef("system.indicators.I_CDU1_CALL", 100, prosimConnect);
+            DataRef dataRef1 = new DataRef("system.indicators.I_CDU1_MSG", 100, prosimConnect);
             DataRef dataRef2 = new DataRef("system.indicators.I_CDU1_EXEC", 100, prosimConnect);
             DataRef dataRef3 = new DataRef("system.indicators.I_CDU1_FAIL", 100, prosimConnect);
 
@@ -137,15 +137,18 @@ namespace Prosim_RS232CDU
         private void AnnunciatorHandler(DataRef dataRef)
         {
             var value = Convert.ToInt32(dataRef.value);
+            // 2 is on
+            // 0 is off
 
             Console.WriteLine($"ProSim MSG Annunciator DataRef {dataRef.name} changed to: {value}");
 
             switch(dataRef.name)
             {
-                case "system.indicators.I_CDU1_CALL":
-                    if (value == 1)
+
+                case "system.indicators.I_CDU1_MSG":
+                    if (value == 2)
                     {
-                        Console.WriteLine("CALL annunciator ON - sending D3 01 to COM PORT...");
+                        Console.WriteLine("MSG annunciator ON - sending D3 01 to COM PORT...");
                         SendHexMessage(new byte[] { 0xD3, 0x01 }); // <-- Add correct value
                         lblL1.Invoke(new MethodInvoker(delegate
                         {
@@ -155,7 +158,7 @@ namespace Prosim_RS232CDU
 
                     if (value == 0)
                     {
-                        Console.WriteLine("CALL annunciator OFF - sending D3 01 to COM PORT...");
+                        Console.WriteLine("MSG annunciator OFF - sending D3 01 to COM PORT...");
                         SendHexMessage(new byte[] { 0xD3, 0x01 }); // <-- Add correct value
                         lblL1.Invoke(new MethodInvoker(delegate
                         {
@@ -164,13 +167,13 @@ namespace Prosim_RS232CDU
                     }
                     break;
                 case "system.indicators.I_CDU1_EXEC":
-                    if (value == 1)
+                    if (value == 2)
                     {
                         Console.WriteLine("EXEC annunciator ON - sending D3 01 to COM PORT...");
                         SendHexMessage(new byte[] { 0xD3, 0x01 }); // <-- Add correct value
                         lblL2.Invoke(new MethodInvoker(delegate
                         {
-                            lblL1.Text = "ON";
+                            lblL2.Text = "ON";
                         }));
                     }
 

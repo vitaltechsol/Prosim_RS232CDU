@@ -94,18 +94,18 @@
             this.L1.AutoSize = true;
             this.L1.Location = new System.Drawing.Point(32, 110);
             this.L1.Name = "L1";
-            this.L1.Size = new System.Drawing.Size(19, 13);
+            this.L1.Size = new System.Drawing.Size(31, 13);
             this.L1.TabIndex = 10;
-            this.L1.Text = "L1";
+            this.L1.Text = "MSG";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(68, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "L2";
+            this.label3.Text = "EXEC";
             // 
             // label4
             // 
