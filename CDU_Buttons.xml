@@ -1,0 +1,831 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Datarefs>
+  <Entry>
+    <Desc>LSK1L on</Desc>
+    <Dataref>LSK1L</Dataref>
+    <Hex>F0 29</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK1L off</Desc>
+    <Dataref>LSK1L</Dataref>
+    <Hex>F0 A9</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK1R on</Desc>
+    <Dataref>LSK1R</Dataref>
+    <Hex>F0 2A</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK1R off</Desc>
+    <Dataref>LSK1R</Dataref>
+    <Hex>F0 AA</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK2L on</Desc>
+    <Dataref>LSK2L</Dataref>
+    <Hex>F0 28</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK2L off</Desc>
+    <Dataref>LSK2L</Dataref>
+    <Hex>F0 AB</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK2R on</Desc>
+    <Dataref>LSK2R</Dataref>
+    <Hex>F0 28</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK2R off</Desc>
+    <Dataref>LSK2R</Dataref>
+    <Hex>F0 A8</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK3L on</Desc>
+    <Dataref>LSK3L</Dataref>
+    <Hex>F0 23</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK3L off</Desc>
+    <Dataref>LSK3L</Dataref>
+    <Hex>F0 A3</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK3R on</Desc>
+    <Dataref>LSK3R</Dataref>
+    <Hex>F0 24</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK3R off</Desc>
+    <Dataref>LSK3R</Dataref>
+    <Hex>F0 A4</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK4L on</Desc>
+    <Dataref>LSK4L</Dataref>
+    <Hex>F0 22</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK4L off</Desc>
+    <Dataref>LSK4L</Dataref>
+    <Hex>F0 A2</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK4R on</Desc>
+    <Dataref>LSK4R</Dataref>
+    <Hex>F0 25</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK4R off</Desc>
+    <Dataref>LSK4R</Dataref>
+    <Hex>F0 A5</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK5L on</Desc>
+    <Dataref>LSK5L</Dataref>
+    <Hex>F0 69</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK5L off</Desc>
+    <Dataref>LSK5L</Dataref>
+    <Hex>F0 E9</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK5R on</Desc>
+    <Dataref>LSK5R</Dataref>
+    <Hex>F0 6A</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK5R off</Desc>
+    <Dataref>LSK5R</Dataref>
+    <Hex>F0 EA</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK6L on</Desc>
+    <Dataref>LSK6L</Dataref>
+    <Hex>F0 68</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK6L off</Desc>
+    <Dataref>LSK6L</Dataref>
+    <Hex>F0 EB</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK6R on</Desc>
+    <Dataref>LSK6R</Dataref>
+    <Hex>F0 79</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LSK6R off</Desc>
+    <Dataref>LSK6R</Dataref>
+    <Hex>F0 F9</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>INIT REF on</Desc>
+    <Dataref>INIT_REF</Dataref>
+    <Hex>F0 7A</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>INIT REF off</Desc>
+    <Dataref>INIT_REF</Dataref>
+    <Hex>F0 FA</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>RTE on</Desc>
+    <Dataref>RTE</Dataref>
+    <Hex>F0 45</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>RTE off</Desc>
+    <Dataref>RTE</Dataref>
+    <Hex>F0 C5</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>CLB on</Desc>
+    <Dataref>CLB</Dataref>
+    <Hex>F0 4A</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>CLB off</Desc>
+    <Dataref>CLB</Dataref>
+    <Hex>F0 CA</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>CRZ on</Desc>
+    <Dataref>CRZ</Dataref>
+    <Hex>F0 4F</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>CRZ off</Desc>
+    <Dataref>CRZ</Dataref>
+    <Hex>F0 CF</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>DES on</Desc>
+    <Dataref>DES</Dataref>
+    <Hex>F0 54</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>DES off</Desc>
+    <Dataref>DES</Dataref>
+    <Hex>F0 D4</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>MENU on</Desc>
+    <Dataref>MENU</Dataref>
+    <Hex>F0 70</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>MENU off</Desc>
+    <Dataref>MENU</Dataref>
+    <Hex>F0 F0</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>LEGS on</Desc>
+    <Dataref>LEGS</Dataref>
+    <Hex>F0 44</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>LEGS off</Desc>
+    <Dataref>LEGS</Dataref>
+    <Hex>F0 C4</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>DEPARR on</Desc>
+    <Dataref>DEP_ARR</Dataref>
+    <Hex>F0 49</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>DEPARR off</Desc>
+    <Dataref>DEP_ARR</Dataref>
+    <Hex>F0 C9</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>HOLD on</Desc>
+    <Dataref>HOLD</Dataref>
+    <Hex>F0 4E</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>HOLD off</Desc>
+    <Dataref>HOLD</Dataref>
+    <Hex>F0 CE</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>PROG on</Desc>
+    <Dataref>PROG</Dataref>
+    <Hex>F0 53</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>PROG off</Desc>
+    <Dataref>PROG</Dataref>
+    <Hex>F0 D3</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>EXEC on</Desc>
+    <Dataref>EXEC</Dataref>
+    <Hex>F0 58</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>EXEC off</Desc>
+    <Dataref>EXEC</Dataref>
+    <Hex>F0 DB</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>N1 LIMIT on</Desc>
+    <Dataref>N1_LIMIT</Dataref>
+    <Hex>F0 2F</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>N1 LIMIT off</Desc>
+    <Dataref>N1_LIMIT</Dataref>
+    <Hex>F0 AF</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>FIX on</Desc>
+    <Dataref>FIX</Dataref>
+    <Hex>F0  6F</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>FIX off</Desc>
+    <Dataref>FIX</Dataref>
+    <Hex>F0 EF</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>A on</Desc>
+    <Dataref>A</Dataref>
+    <Hex>F0 43</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>A off</Desc>
+    <Dataref>A</Dataref>
+    <Hex>F0 C3</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>B on</Desc>
+    <Dataref>B</Dataref>
+    <Hex>F0 48</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>B off</Desc>
+    <Dataref>B</Dataref>
+    <Hex>F0 CB</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>C on</Desc>
+    <Dataref>C</Dataref>
+    <Hex>F0 4D</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>C off</Desc>
+    <Dataref>C</Dataref>
+    <Hex>F0 CD</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>D on</Desc>
+    <Dataref>D</Dataref>
+    <Hex>F0 52</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>D off</Desc>
+    <Dataref>D</Dataref>
+    <Hex>F0 D2</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>E on</Desc>
+    <Dataref>E</Dataref>
+    <Hex>F0 57</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>E off</Desc>
+    <Dataref>E</Dataref>
+    <Hex>F0 D7</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>PREV PAGE on</Desc>
+    <Dataref>PREV_PAGE</Dataref>
+    <Hex>F0 30</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>PREV PAGE off</Desc>
+    <Dataref>PREV_PAGE</Dataref>
+    <Hex>F0 B0</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>NEXT PAGE on</Desc>
+    <Dataref>NEXT_PAGE</Dataref>
+    <Hex>F0 6E</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>NEXT PAGE off</Desc>
+    <Dataref>NEXT_PAGE</Dataref>
+    <Hex>F0 EE</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>F on</Desc>
+    <Dataref>F</Dataref>
+    <Hex>F0 42</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>F off</Desc>
+    <Dataref>F</Dataref>
+    <Hex>F0 C2</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>G on</Desc>
+    <Dataref>G</Dataref>
+    <Hex>F0 47</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>G off</Desc>
+    <Dataref>G</Dataref>
+    <Hex>F0 C7</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>H on</Desc>
+    <Dataref>H</Dataref>
+    <Hex>F0 4C</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>H off</Desc>
+    <Dataref>H</Dataref>
+    <Hex>F0 CC</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>I on</Desc>
+    <Dataref>I</Dataref>
+    <Hex>F0 51</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>I off</Desc>
+    <Dataref>I</Dataref>
+    <Hex>F0 D1</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>J on</Desc>
+    <Dataref>J</Dataref>
+    <Hex>F0 56</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>J off</Desc>
+    <Dataref>J</Dataref>
+    <Hex>F0 D6</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>1 on</Desc>
+    <Dataref>1</Dataref>
+    <Hex>F0 1E</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>1 off</Desc>
+    <Dataref>1</Dataref>
+    <Hex>F0 9E</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>2 on</Desc>
+    <Dataref>2</Dataref>
+    <Hex>F0 64</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>2 off</Desc>
+    <Dataref>2</Dataref>
+    <Hex>F0 E4</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>3 on</Desc>
+    <Dataref>3</Dataref>
+    <Hex>F0 60</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>3 off</Desc>
+    <Dataref>3</Dataref>
+    <Hex>F0 E0</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>K on</Desc>
+    <Dataref>K</Dataref>
+    <Hex>F0 74</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>K off</Desc>
+    <Dataref>K</Dataref>
+    <Hex>F0 F4</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>L on</Desc>
+    <Dataref>L</Dataref>
+    <Hex>F0 72</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>L off</Desc>
+    <Dataref>L</Dataref>
+    <Hex>F0 F2</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>M on</Desc>
+    <Dataref>M</Dataref>
+    <Hex>F0 31</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>M off</Desc>
+    <Dataref>M</Dataref>
+    <Hex>F0  81</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>N on</Desc>
+    <Dataref>N</Dataref>
+    <Hex>F0 34</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>N off</Desc>
+    <Dataref>N</Dataref>
+    <Hex>F0  84</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>O on</Desc>
+    <Dataref>O</Dataref>
+    <Hex>F0 37</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>O off</Desc>
+    <Dataref>O</Dataref>
+    <Hex>F0 87</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>4 on</Desc>
+    <Dataref>4</Dataref>
+    <Hex>F0 1F</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>4 off</Desc>
+    <Dataref>4</Dataref>
+    <Hex>F0 9F</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>5 on</Desc>
+    <Dataref>5</Dataref>
+    <Hex>F0 65</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>5 off</Desc>
+    <Dataref>5</Dataref>
+    <Hex>F0 E5</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>6 on</Desc>
+    <Dataref>6</Dataref>
+    <Hex>F0 68</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>6 off</Desc>
+    <Dataref>6</Dataref>
+    <Hex>F0 EB</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>P on</Desc>
+    <Dataref>P</Dataref>
+    <Hex>F0 73</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>P off</Desc>
+    <Dataref>P</Dataref>
+    <Hex>F0 F3</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>Q on</Desc>
+    <Dataref>Q</Dataref>
+    <Hex>F0 75</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>Q off</Desc>
+    <Dataref>Q</Dataref>
+    <Hex>F0 F5</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>R on</Desc>
+    <Dataref>R</Dataref>
+    <Hex>F0 32</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>R off</Desc>
+    <Dataref>R</Dataref>
+    <Hex>F0 82</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>S on</Desc>
+    <Dataref>S</Dataref>
+    <Hex>F0 35</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>S off</Desc>
+    <Dataref>S</Dataref>
+    <Hex>F0 85</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>T on</Desc>
+    <Dataref>T</Dataref>
+    <Hex>F0 38</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>T off</Desc>
+    <Dataref>T</Dataref>
+    <Hex>F0 88</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>7 on</Desc>
+    <Dataref>7</Dataref>
+    <Hex>F0 20</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>7 off</Desc>
+    <Dataref>7</Dataref>
+    <Hex>F0 A0</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>8 on</Desc>
+    <Dataref>8</Dataref>
+    <Hex>F0 66</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>8 off</Desc>
+    <Dataref>8</Dataref>
+    <Hex>F0 E6</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>9 on</Desc>
+    <Dataref>9</Dataref>
+    <Hex>F0 6C</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>9 off</Desc>
+    <Dataref>9</Dataref>
+    <Hex>F0 EC</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>U on</Desc>
+    <Dataref>U</Dataref>
+    <Hex>F0 71</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>U off</Desc>
+    <Dataref>U</Dataref>
+    <Hex>F0  F1</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>V on</Desc>
+    <Dataref>V</Dataref>
+    <Hex>F0 78</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>V off</Desc>
+    <Dataref>V</Dataref>
+    <Hex>F0 FB</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>W on</Desc>
+    <Dataref>W</Dataref>
+    <Hex>F0 33</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>W off</Desc>
+    <Dataref>W</Dataref>
+    <Hex>F0 83</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>X on</Desc>
+    <Dataref>X</Dataref>
+    <Hex>F0 36</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>X off</Desc>
+    <Dataref>X</Dataref>
+    <Hex>F0 86</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>Y on</Desc>
+    <Dataref>Y</Dataref>
+    <Hex>F0 39</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>Y off</Desc>
+    <Dataref>Y</Dataref>
+    <Hex>F0 89</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>. on</Desc>
+    <Dataref>DOT</Dataref>
+    <Hex>F0 21</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>. off</Desc>
+    <Dataref>DOT</Dataref>
+    <Hex>F0 A1</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>0 on</Desc>
+    <Dataref>0</Dataref>
+    <Hex>F0 67</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>0 off</Desc>
+    <Dataref>0</Dataref>
+    <Hex>F0 E7</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>+/- on</Desc>
+    <Dataref>MINUS</Dataref>
+    <Hex>F0 6D</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>+/- off</Desc>
+    <Dataref>MINUS</Dataref>
+    <Hex>F0 ED</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>Z on</Desc>
+    <Dataref>Z</Dataref>
+    <Hex>F0 41</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>Z off</Desc>
+    <Dataref>Z</Dataref>
+    <Hex>F0 C1</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>SP on</Desc>
+    <Dataref>SPACE</Dataref>
+    <Hex>F0 46</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>SP off</Desc>
+    <Dataref>SPACE</Dataref>
+    <Hex>F0 C6</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>DEL on</Desc>
+    <Dataref>DEL</Dataref>
+    <Hex>F0 4B</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>DEL off</Desc>
+    <Dataref>DEL</Dataref>
+    <Hex>F0 CB</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>I on</Desc>
+    <Dataref>SLASH</Dataref>
+    <Hex>F0 50</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>I off</Desc>
+    <Dataref>SLASH</Dataref>
+    <Hex>F0 D0</Hex>
+    <Value>0</Value>
+  </Entry>
+  <Entry>
+    <Desc>CLR on</Desc>
+    <Dataref>CLEAR</Dataref>
+    <Hex>F0 3A</Hex>
+    <Value>1</Value>
+  </Entry>
+  <Entry>
+    <Desc>CLR off</Desc>
+    <Dataref>CLEAR</Dataref>
+    <Hex>F0 BA</Hex>
+    <Value>0</Value>
+  </Entry>
+</Datarefs>

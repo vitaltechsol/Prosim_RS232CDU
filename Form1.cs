@@ -1,7 +1,9 @@
 ﻿using ProSimSDK;
 using System;
+using System.Collections.Generic;
 using System.IO.Ports;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Prosim_RS232CDU
 {
@@ -9,6 +11,7 @@ namespace Prosim_RS232CDU
     public partial class Form1 : Form
     {
         static SerialPort serialPort;
+        private Dictionary<string, EntryData> dataMap = new Dictionary<string, EntryData>();
 
         ProSimConnect prosimConnect = new ProSimConnect();
         string prosimIP = "192.168.1.142";
@@ -21,9 +24,7 @@ namespace Prosim_RS232CDU
         const ushort CTRL_OFST = 0x0004;
         const ushort CTRL_CALL = 0x0010;
         const ushort CTRL_FAIL = 0x0020;
-
         static ushort message = 0xD300;
-
 
         public Form1()
         {
@@ -32,6 +33,7 @@ namespace Prosim_RS232CDU
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            LoadXml("CDU_Buttons.xml");
             prosimConnect.onConnect += connection_onConnect;
             prosimConnect.onDisconnect += connection_onDisconnect;
             ConnectToProSim(prosimIP);
@@ -101,58 +103,20 @@ namespace Prosim_RS232CDU
 
                     if (bytesRead == 2)
                     {
-                        string hex = $"{buffer[0]:X2}{buffer[1]:X2}";
-                        Console.WriteLine($"Received HEX: {hex}");
+                        // This has a space between the buffers to match the XML hex value
+                        string hexToFind = $"{buffer[0]:X2} {buffer[1]:X2}".ToUpper();
+                        Console.WriteLine($"Received HEX: {hexToFind}");
 
-                        // There should a value for on and a value for off I think?
-                        // Also need to convert to switch instead of if statements
-
-                        //switch (hex.ToUpperInvariant())
-                        //{
-                        //    case "F070":
-                        //        // Your logic here
-                        //        break;
-
-                        if (hex.Equals("F070", StringComparison.OrdinalIgnoreCase))
+                        if (dataMap.TryGetValue(hexToFind, out EntryData entry))
                         {
-                            Console.WriteLine("CDU MENU button press detected. Sending to ProSim...");
-
-                            DataRef dataRef = new DataRef("system.switches.S_CDU1_KEY_MENU", 100, prosimConnect, true);
-
-                            dataRef.value = 1; // ON
-
-                            System.Threading.Thread.Sleep(100); // Trigger utton press
-
-                            dataRef.value = 0; // OFF
-                            Console.WriteLine("CDU MENU button press sent to ProSim.");
+                            Console.WriteLine($" FOUND HEX: Desc: {entry.Desc}\nDataref: {entry.Dataref}\nValue: {entry.Value}");
+                            DataRef dataRef = new DataRef($"system.switches.S_CDU1_{entry.Dataref}", 100, prosimConnect, true);
+                            dataRef.value = entry.Value;
+                            lblKeyPressed.Text = entry.Desc;
                         }
-
-                        if (hex.Equals("F029", StringComparison.OrdinalIgnoreCase))
+                        else
                         {
-                            Console.WriteLine("CDU MENU button press detected. Sending to ProSim...");
-
-                            DataRef dataRef = new DataRef("system.switches.S_CDU1_KEY_LSK1L", 100, prosimConnect, true);
-
-                            dataRef.value = 1; // ON
-
-                            System.Threading.Thread.Sleep(100); // Trigger button press
-
-                            dataRef.value = 0; // OFF
-                            Console.WriteLine("CDU MENU button press sent to ProSim.");
-                        }
-
-                        if (hex.Equals("F028", StringComparison.OrdinalIgnoreCase))
-                        {
-                            Console.WriteLine("CDU MENU button press detected. Sending to ProSim...");
-
-                            DataRef dataRef = new DataRef("system.switches.S_CDU1_KEY_LSK2L", 100, prosimConnect, true);
-
-                            dataRef.value = 1; // ON
-
-                            System.Threading.Thread.Sleep(100); // Trigger button press
-
-                            dataRef.value = 0; // OFF
-                            Console.WriteLine("CDU MENU button press sent to ProSim.");
+                            Console.WriteLine($"Hex '{hexToFind}' not found.");
                         }
                     }
                 }
@@ -212,135 +176,38 @@ namespace Prosim_RS232CDU
             }
         }
 
+        private void LoadXml(string filePath)
+        {
+            try
+            {
+                XDocument doc = XDocument.Load(filePath);
+                foreach (var entry in doc.Descendants("Entry"))
+                {
+                    string hex = entry.Element("Hex")?.Value.Trim();
+                    string desc = entry.Element("Desc")?.Value.Trim();
+                    string dataref = entry.Element("Dataref")?.Value.Trim();
+                    Int32 value = Convert.ToInt32(entry.Element("Value")?.Value.Trim());
 
-        /*		// Handler for ProSim dataref change
+                    if (!string.IsNullOrEmpty(hex))
+                    {
+                        dataMap[hex] = new EntryData
+                        {
+                            Desc = desc,
+                            Dataref = dataref,
+                            Value = value
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading XML: " + ex.Message);
+            }
+        }
 
-				private void AnnunciatorHandler(DataRef dataRef)
-				{
-					var value = Convert.ToInt32(dataRef.value);
-					// 2 is on
-					// 0 is off
 
-					Console.WriteLine($"ProSim MSG Annunciator DataRef {dataRef.name} changed to: {value}");
-
-					switch (dataRef.name)
-					{
-
-						case "system.indicators.I_CDU1_MSG":
-							if (value == 2)
-							{
-								Console.WriteLine("MSG annunciator ON - sending D3 01 to COM PORT...");
-								SendHexMessage(new byte[] { 0xD3, 0x01 }); // <-- Add correct value
-								lblL1.Invoke(new MethodInvoker(delegate
-								{
-									lblL1.Text = "ON";
-								}));
-							}
-
-							if (value == 0)
-							{
-								Console.WriteLine("MSG annunciator OFF - sending D3 01 to COM PORT...");
-								SendHexMessage(new byte[] { 0xD3, 0x00 }); // <-- Add correct value
-								lblL1.Invoke(new MethodInvoker(delegate
-								{
-									lblL1.Text = "OFF";
-								}));
-							}
-							break;
-
-						case "system.indicators.I_CDU1_EXEC":
-							if (value == 2)
-							{
-								Console.WriteLine("EXEC annunciator ON - sending D3 02 to COM PORT...");
-								SendHexMessage(new byte[] { 0xD3, 0x02 }); // <-- Add correct value
-								lblL2.Invoke(new MethodInvoker(delegate
-								{
-									lblL2.Text = "ON";
-								}));
-							}
-
-							if (value == 0)
-							{
-								Console.WriteLine("EXEC annunciator OFF - sending D3 02 to COM PORT...");
-								SendHexMessage(new byte[] { 0xD3, 0x00 }); // <-- Add correct value
-								lblL2.Invoke(new MethodInvoker(delegate
-								{
-									lblL2.Text = "OFF";
-								}));
-							}
-							break;
-
-						case "system.indicators.I_CDU1_OFFSET":
-							if (value == 2)
-							{
-								Console.WriteLine("OFFSET annunciator ON - sending D3 04 to COM PORT...");
-								SendHexMessage(new byte[] { 0xD3, 0x04 }); // <-- Add correct value
-								lblL2.Invoke(new MethodInvoker(delegate
-								{
-									lblL3.Text = "ON";
-								}));
-							}
-
-							if (value == 0)
-							{
-								Console.WriteLine("OFFSET annunciator OFF - sending D3 04 to COM PORT...");
-								SendHexMessage(new byte[] { 0xD3, 0x00 }); // <-- Add correct value
-								lblL2.Invoke(new MethodInvoker(delegate
-								{
-									lblL3.Text = "OFF";
-								}));
-							}
-							break;
-
-						case "system.indicators.I_CDU1_CALL":
-							if (value == 2)
-							{
-								Console.WriteLine("CALL annunciator ON - sending D3 10 to COM PORT...");
-								SendHexMessage(new byte[] { 0xD3, 0x10 }); // <-- Add correct value
-								lblL2.Invoke(new MethodInvoker(delegate
-								{
-									lblL4.Text = "ON";
-								}));
-							}
-
-							if (value == 0)
-							{
-								Console.WriteLine("CALL annunciator OFF - sending D3 10 to COM PORT...");
-								SendHexMessage(new byte[] { 0xD3, 0x00 }); // <-- Add correct value
-								lblL2.Invoke(new MethodInvoker(delegate
-								{
-									lblL4.Text = "OFF";
-								}));
-							}
-							break;
-
-						case "system.indicators.I_CDU1_FAIL":
-							if (value == 2)
-							{
-								Console.WriteLine("FAIL annunciator ON - sending D3 20 to COM PORT...");
-								SendHexMessage(new byte[] { 0xD3, 0x20 }); // <-- Add correct value
-								lblL2.Invoke(new MethodInvoker(delegate
-								{
-									lblL4.Text = "ON";
-								}));
-							}
-
-							if (value == 0)
-							{
-								Console.WriteLine("FAIL annunciator OFF - sending D3 20 to COM PORT...");
-								SendHexMessage(new byte[] { 0xD3, 0x00 }); // <-- Add correct value
-								lblL2.Invoke(new MethodInvoker(delegate
-								{
-									lblL4.Text = "OFF";
-								}));
-							}
-							break;
-					}
-
-				}
-		*/
-
-        // Write to COM8
+      
+        // Write to COM
         private static void Send()
         {
             byte[] bytes = new byte[]
@@ -381,5 +248,11 @@ namespace Prosim_RS232CDU
             Send();
         }
 
+    }
+    public class EntryData
+    {
+        public string Desc { get; set; }
+        public string Dataref { get; set; }
+        public int Value { get; set; }
     }
 }
