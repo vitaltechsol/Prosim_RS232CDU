@@ -1,6 +1,7 @@
 ﻿using ProSimSDK;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO.Ports;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -14,12 +15,13 @@ namespace Prosim_RS232CDU
         private Dictionary<string, EntryData> dataMap = new Dictionary<string, EntryData>();
 
         ProSimConnect prosimConnect = new ProSimConnect();
-        string prosimIP = "192.168.1.142";
-        string comPort = "COM3";
-        int baudRate = 9600;
+        string prosimIP = "127.0.0.1";  //will be overwritten when config.xml loads
+        string comPort = "COM1";        //will be overwritten when config.xml loads
+		int baudRate = 9600;            //will be overwritten when config.xml loads
+        string cduId = "CP";            //will be overwritten when config.xml loads
 
-        // Control flags 
-        const ushort CTRL_MSG = 0x0001;
+		// Control flags for Annunciators
+		const ushort CTRL_MSG = 0x0001;
         const ushort CTRL_EXEC = 0x0002;
         const ushort CTRL_OFST = 0x0004;
         const ushort CTRL_CALL = 0x0010;
@@ -33,6 +35,7 @@ namespace Prosim_RS232CDU
 
         private void Form1_Load(object sender, EventArgs e)
         {
+			LoadConfig();
             LoadXml("CDU_Buttons.xml");
             prosimConnect.onConnect += connection_onConnect;
             prosimConnect.onDisconnect += connection_onDisconnect;
@@ -50,9 +53,57 @@ namespace Prosim_RS232CDU
             dataRef3.onDataChange += AnnunciatorHandler;
             dataRef4.onDataChange += AnnunciatorHandler;
             dataRef5.onDataChange += AnnunciatorHandler;
+
         }
 
-        void connection_onConnect()
+		// Load IP, COM, ID from config.xml
+		private void LoadConfig()
+		{
+			try
+			{
+				XDocument doc = XDocument.Load("config.xml");
+				foreach (XElement entry in doc.Descendants("Configuration"))
+				{
+					string ip = entry.Element("IP")?.Value.Trim();
+					string port = entry.Element("RS232")?.Value.Trim();
+					string baudStr = entry.Element("BAUD")?.Value.Trim();
+					string cduid = entry.Element("CDUID")?.Value.Trim();
+
+					if (!string.IsNullOrEmpty(ip))
+					{
+						prosimIP = ip;
+						Console.WriteLine($"Loaded ProSim IP: {prosimIP}");
+                        label9.Text = ip;
+					}
+
+					if (!string.IsNullOrEmpty(port))
+					{
+						comPort = port;
+						Console.WriteLine($"Loaded COM Port: {comPort}");
+					}
+
+					if (!string.IsNullOrEmpty(cduid))
+					{
+						cduId = cduid;
+						Console.WriteLine($"CDU ID: {cduId}");
+                        this.Text = cduId + " - CDU Interface";
+					}
+
+					if (!string.IsNullOrEmpty(baudStr) && int.TryParse(baudStr, out int baud))
+					{
+						baudRate = baud;
+						Console.WriteLine($"Loaded COM Port: {baudRate}");
+						label6.Text = baudStr;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error loading config.xml: " + ex.Message);
+			}
+		}
+
+		void connection_onConnect()
         {
             Invoke(new MethodInvoker(StartConnection));
         }
@@ -176,7 +227,7 @@ namespace Prosim_RS232CDU
             }
         }
 
-        private void LoadXml(string filePath)
+        private void LoadXml(string filePath)  // CDU Buttons data
         {
             try
             {
@@ -207,7 +258,7 @@ namespace Prosim_RS232CDU
 
 
       
-        // Write to COM
+        // Write to COM to turn on Annunciators
         private static void Send()
         {
             byte[] bytes = new byte[]
