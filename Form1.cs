@@ -15,8 +15,8 @@ namespace Prosim_RS232CDU
         private Dictionary<string, EntryData> dataMap = new Dictionary<string, EntryData>();
 
         ProSimConnect prosimConnect = new ProSimConnect();
-        string prosimIP = "192.168.1.112";  //will be overwritten when config.xml loads
-        string comPort = "COM8";        //will be overwritten when config.xml loads
+        string prosimIP = "127.0.0.1";  //will be overwritten when config.xml loads
+        string comPort = "COM1";        //will be overwritten when config.xml loads
 		int baudRate = 9600;            //will be overwritten when config.xml loads
         string cduId = "CP";            //will be overwritten when config.xml loads
 
@@ -161,7 +161,7 @@ namespace Prosim_RS232CDU
                         if (dataMap.TryGetValue(hexToFind, out EntryData entry))
                         {
                             Console.WriteLine($" FOUND HEX: Desc: {entry.Desc}\nDataref: {entry.Dataref}\nValue: {entry.Value}");
-                            DataRef dataRef = new DataRef($"system.switches.S_CDU1_{entry.Dataref}", 100, prosimConnect, true);
+                            DataRef dataRef = new DataRef($"system.switches.S_CDU1_KEY_{entry.Dataref}", 100, prosimConnect, true);
                             dataRef.value = entry.Value;
                             lblKeyPressed.Text = entry.Desc;
                         }
