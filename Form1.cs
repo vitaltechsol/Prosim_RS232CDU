@@ -15,8 +15,8 @@ namespace Prosim_RS232CDU
         private Dictionary<string, EntryData> dataMap = new Dictionary<string, EntryData>();
 
         ProSimConnect prosimConnect = new ProSimConnect();
-        string prosimIP = "127.0.0.1";  //will be overwritten when config.xml loads
-        string comPort = "COM1";        //will be overwritten when config.xml loads
+        string prosimIP = "192.168.1.112";  //will be overwritten when config.xml loads
+        string comPort = "COM8";        //will be overwritten when config.xml loads
 		int baudRate = 9600;            //will be overwritten when config.xml loads
         string cduId = "CP";            //will be overwritten when config.xml loads
 
