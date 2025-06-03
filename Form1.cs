@@ -301,8 +301,12 @@ namespace Prosim_RS232CDU
             Send();
         }
 
-    }
-    public class EntryData
+		private void label13_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
+	public class EntryData
     {
         public string Desc { get; set; }
         public string Dataref { get; set; }
