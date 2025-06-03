@@ -33,19 +33,19 @@
   <Entry>
     <Desc>LSK2L off</Desc>
     <Dataref>LSK2L</Dataref>
-    <Hex>F0 AB</Hex>
+    <Hex>F0 A8</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
     <Desc>LSK2R on</Desc>
     <Dataref>LSK2R</Dataref>
-    <Hex>F0 28</Hex>
+    <Hex>F0 2B</Hex>
     <Value>1</Value>
   </Entry>
   <Entry>
     <Desc>LSK2R off</Desc>
     <Dataref>LSK2R</Dataref>
-    <Hex>F0 A8</Hex>
+    <Hex>F0 AB</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -129,7 +129,7 @@
   <Entry>
     <Desc>LSK6L off</Desc>
     <Dataref>LSK6L</Dataref>
-    <Hex>F0 EB</Hex>
+    <Hex>F0 E8</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -273,7 +273,7 @@
   <Entry>
     <Desc>EXEC off</Desc>
     <Dataref>EXEC</Dataref>
-    <Hex>F0 DB</Hex>
+    <Hex>F0 D8</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -291,7 +291,7 @@
   <Entry>
     <Desc>FIX on</Desc>
     <Dataref>FIX</Dataref>
-    <Hex>F0  6F</Hex>
+    <Hex>F0 6F</Hex>
     <Value>1</Value>
   </Entry>
   <Entry>
@@ -321,7 +321,7 @@
   <Entry>
     <Desc>B off</Desc>
     <Dataref>B</Dataref>
-    <Hex>F0 CB</Hex>
+    <Hex>F0 C8</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -513,7 +513,7 @@
   <Entry>
     <Desc>M off</Desc>
     <Dataref>M</Dataref>
-    <Hex>F0  81</Hex>
+    <Hex>F0 B1</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -525,7 +525,7 @@
   <Entry>
     <Desc>N off</Desc>
     <Dataref>N</Dataref>
-    <Hex>F0  84</Hex>
+    <Hex>F0 B4</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -537,7 +537,7 @@
   <Entry>
     <Desc>O off</Desc>
     <Dataref>O</Dataref>
-    <Hex>F0 87</Hex>
+    <Hex>F0 B7</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -567,7 +567,7 @@
   <Entry>
     <Desc>6 on</Desc>
     <Dataref>6</Dataref>
-    <Hex>F0 68</Hex>
+    <Hex>F0 6B</Hex>
     <Value>1</Value>
   </Entry>
   <Entry>
@@ -609,7 +609,7 @@
   <Entry>
     <Desc>R off</Desc>
     <Dataref>R</Dataref>
-    <Hex>F0 82</Hex>
+    <Hex>F0 B2</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -621,7 +621,7 @@
   <Entry>
     <Desc>S off</Desc>
     <Dataref>S</Dataref>
-    <Hex>F0 85</Hex>
+    <Hex>F0 B5</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -629,11 +629,11 @@
     <Dataref>T</Dataref>
     <Hex>F0 38</Hex>
     <Value>1</Value>
-  </Entry>
+  </Entry> 
   <Entry>
     <Desc>T off</Desc>
     <Dataref>T</Dataref>
-    <Hex>F0 88</Hex>
+    <Hex>F0 B8</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -681,13 +681,13 @@
   <Entry>
     <Desc>U off</Desc>
     <Dataref>U</Dataref>
-    <Hex>F0  F1</Hex>
+    <Hex>F0 F1</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
     <Desc>V on</Desc>
     <Dataref>V</Dataref>
-    <Hex>F0 78</Hex>
+    <Hex>F0 7B</Hex>
     <Value>1</Value>
   </Entry>
   <Entry>
@@ -705,7 +705,7 @@
   <Entry>
     <Desc>W off</Desc>
     <Dataref>W</Dataref>
-    <Hex>F0 83</Hex>
+    <Hex>F0 B3</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -717,7 +717,7 @@
   <Entry>
     <Desc>X off</Desc>
     <Dataref>X</Dataref>
-    <Hex>F0 86</Hex>
+    <Hex>F0 B6</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
@@ -729,7 +729,7 @@
   <Entry>
     <Desc>Y off</Desc>
     <Dataref>Y</Dataref>
-    <Hex>F0 89</Hex>
+    <Hex>F0 B9</Hex>
     <Value>0</Value>
   </Entry>
   <Entry>
