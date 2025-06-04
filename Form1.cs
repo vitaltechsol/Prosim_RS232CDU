@@ -131,7 +131,8 @@ namespace Prosim_RS232CDU
             }
             catch (Exception ex)
             {
-            }
+				MessageBox.Show("Error loading prosim: " + ex.Message);
+			}
         }
 
         void StartConnection()
@@ -181,55 +182,60 @@ namespace Prosim_RS232CDU
         }
 
 
-        // Annunciator handler using bitwise TurnOn/TurnOff
-        private void AnnunciatorHandler(DataRef dataRef)
-        {
-            var value = Convert.ToInt32(dataRef.value);
-            Console.WriteLine($"DataRef {dataRef.name} changed to: {value}");
+		// Annunciator handler using bitwise TurnOn/TurnOff
+		private void AnnunciatorHandler(DataRef dataRef)
+		{
+			var value = Convert.ToInt32(dataRef.value);
+			Console.WriteLine($"DataRef {dataRef.name} changed to: {value}");
 
-            ushort flag = 0;
-            Label targetLabel = lblL1;
+			ushort flag = 0;
+			Label targetLabel = lblL1;
 
-            switch (dataRef.name)
-            {
-                case "system.indicators.I_CDU1_MSG":
-                    flag = CTRL_MSG;
-                    targetLabel = lblL1;
-                    break;
-                case "system.indicators.I_CDU1_EXEC":
-                    flag = CTRL_EXEC;
-                    targetLabel = lblL2;
-                    break;
-                case "system.indicators.I_CDU1_OFFSET":
-                    flag = CTRL_OFST;
-                    targetLabel = lblL3;
-                    break;
-                case "system.indicators.I_CDU1_CALL":
-                    flag = CTRL_CALL;
-                    targetLabel = lblL4;
-                    break;
-                case "system.indicators.I_CDU1_FAIL":
-                    flag = CTRL_FAIL;
-                    targetLabel = lblL5;
-                    break;
-            }
+			string prosimRefi = cduId == "CP" ? "I_CDU1" : "I_CDU2";
 
-            if (flag != 0)
-            {
-                if (value == 2) // ON
-                {
-                    TurnOn(flag);
-                    targetLabel.Invoke(new MethodInvoker(() => targetLabel.Text = "ON"));
-                }
-                else if (value == 0) // OFF
-                {
-                    TurnOff(flag);
-                    targetLabel.Invoke(new MethodInvoker(() => targetLabel.Text = "OFF"));
-                }
-            }
-        }
+			if (dataRef.name == $"system.indicators.{prosimRefi}_MSG")
+			{
+				flag = CTRL_MSG;
+				targetLabel = lblL1;
+			}
+			else if (dataRef.name == $"system.indicators.{prosimRefi}_EXEC")
+			{
+				flag = CTRL_EXEC;
+				targetLabel = lblL2;
+			}
+			else if (dataRef.name == $"system.indicators.{prosimRefi}_OFFSET")
+			{
+				flag = CTRL_OFST;
+				targetLabel = lblL3;
+			}
+			else if (dataRef.name == $"system.indicators.{prosimRefi}_CALL")
+			{
+				flag = CTRL_CALL;
+				targetLabel = lblL4;
+			}
+			else if (dataRef.name == $"system.indicators.{prosimRefi}_FAIL")
+			{
+				flag = CTRL_FAIL;
+				targetLabel = lblL5;
+			}
 
-        private void LoadXml(string filePath)  // CDU Buttons data
+			if (flag != 0)
+			{
+				if (value == 2) // ON
+				{
+					TurnOn(flag);
+					targetLabel.Invoke(new MethodInvoker(() => targetLabel.Text = "ON"));
+				}
+				else if (value == 0) // OFF
+				{
+					TurnOff(flag);
+					targetLabel.Invoke(new MethodInvoker(() => targetLabel.Text = "OFF"));
+				}
+			}
+		}
+
+
+		private void LoadXml(string filePath)  // CDU Buttons data
         {
             try
             {
@@ -301,8 +307,12 @@ namespace Prosim_RS232CDU
             Send();
         }
 
-    }
-    public class EntryData
+		private void label13_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
+	public class EntryData
     {
         public string Desc { get; set; }
         public string Dataref { get; set; }
