@@ -131,7 +131,8 @@ namespace Prosim_RS232CDU
             }
             catch (Exception ex)
             {
-            }
+				MessageBox.Show("Error loading prosim: " + ex.Message);
+			}
         }
 
         void StartConnection()
